@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+<body>
+  <%- include('partials/header') %>
+
+  <div class="container">
+    
+    <h1> <%= pageTitle; %></h1>
+
+    <% const header = dbDataHeaders[0]; %>
+
+    <form action="/removeData" method="POST">
+      <label for="<%= Object.values(header)[0] %>"> Row Id to be removed:</label>
+      <input type="text" name="<%= Object.values(header)[0] %>">
+      <button type="submit">Remove row</button> 
+    </form>
+
+    <%- include('partials/dataTable') %>
+
+  </div> 
+</body>

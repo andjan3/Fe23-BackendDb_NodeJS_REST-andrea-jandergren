@@ -1,0 +1,18 @@
+<% if (typeof dbData != 'undefined' && dbData.length > 0) { %>
+    <table class="table">
+        <tr>
+            <% Object.keys(dbData[0]).forEach(header => { %>
+                <th><%= header %></th>
+            <% }); %>
+        </tr>
+        <% dbData.forEach(row => { %>
+            <tr>
+                <% Object.values(row).forEach(value => { %>
+                    <td><%= value %></td>
+                <% }); %>
+            </tr>
+        <% }); %>
+    </table>
+<% } else { %>
+    <p>No records found.</p>
+<% } %>
